@@ -1,0 +1,5 @@
+.skill-icon{
+    font-size: 45px;
+    position: static;
+    transform: rotateZ(-360deg); /* Reset the rotation for the content */
+}

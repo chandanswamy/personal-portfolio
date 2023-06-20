@@ -1,0 +1,12 @@
+.nav-bar-menu-button{
+    height: 40px;
+    width: 64px;
+    color: #000000;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 8px;
+}
+
+.image-container{
+    width: 56px;
+}
