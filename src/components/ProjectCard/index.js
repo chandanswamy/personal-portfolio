@@ -12,11 +12,11 @@ const ProjectCard = (props) => {
   const isFrontend = projectDomain === 'Frontend';
 
   const onClickDemoButton = () => {
-    window.location.href = projectDemo;
+    window.open(projectDemo)
   };
 
   const onClickCodeButton = () => {
-    window.location.href = projectCode;
+    window.open(projectCode)
   };
   return(
   <PortfolioContext.Consumer>
