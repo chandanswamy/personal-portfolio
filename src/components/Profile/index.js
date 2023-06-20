@@ -5,6 +5,11 @@ import Skills from '../Skills'
 import Projects from '../Projects';
 
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ShareProfile from '../ShareProfile'
 
 import Typed from 'typed.js';
 import { 
@@ -19,7 +24,9 @@ import {
   ProfileDescription,
   CarouselProfileDescription,
   PrevArrow,
-  NextArrow
+  NextArrow,
+  ProfileIcons,
+  ProfileSocialMediaButton
 } from './style';
 
 import Slider from 'react-slick'
@@ -29,12 +36,37 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import './index.css'
 
+const socialMediaIcons = [
+  {
+    iconName: <WhatsAppIcon sx={{fontSize: '28px'}}/>,
+    iconLink: 'https://wa.me/+919491558919/',
+    color: '#25D366'
+  },
+  {
+    iconName: <InstagramIcon sx={{fontSize: '28px'}} />,
+    iconLink: 'https://www.instagram.com/_chandanswamy_/',
+    color: '#E4405F'
+  },
+  {
+    iconName: <GitHubIcon sx={{fontSize: '28px'}} />,
+    iconLink: 'https://github.com/chandanswamy',
+    color: '#690694'
+  },
+  {
+    iconName: <LinkedInIcon sx={{fontSize: '28px'}} />,
+    iconLink: 'https://www.linkedin.com/in/chandanswamy/',
+    color: '#0A66C2'
+  }
+];
+
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.el = React.createRef();
     this.typed = null;
   }
+
+  state = {socialMediaIconsList: socialMediaIcons}
 
   componentDidMount() {
     this.typed = new Typed(this.el.current, {
@@ -63,8 +95,6 @@ class Profile extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       speed: 1000,
-      autoplay: true, // Enable automatic scrolling
-      autoplaySpeed: 5000,
       prevArrow: <PrevArrow><FiChevronLeft /></PrevArrow>,
       nextArrow: <NextArrow><FiChevronRight /></NextArrow>,
     }
@@ -113,6 +143,10 @@ class Profile extends Component {
     )
   }
 
+  navigateToSocialAcc = (socialMediaLink) => {
+    window.open(socialMediaLink)
+  }
+
   render() {
     const profileImageUrl = "https://res.cloudinary.com/chandanswamy/image/upload/v1652021155/IMG_20200220_202943_306_ecjncp.jpg"
 
@@ -121,6 +155,7 @@ class Profile extends Component {
       <PortfolioContext.Consumer>
         {value => {
           const {isDarkTheme} = value;
+          const {socialMediaIconsList} = this.state
           const bgColor = isDarkTheme ? '#000' : '#fff'
           const textColor = isDarkTheme ? '#fff' : '#000'
           const linkItemColor = isDarkTheme ? '#262626' : '#efefef'
@@ -129,8 +164,15 @@ class Profile extends Component {
             <ProfileContainer bgColor={bgColor}>
               <div className='profile-section'>
                 <ProfileSectionSubOne>
-                  <ProfileImage src={profileImageUrl} alt='profile'/>           
-                  <ProfileIntro textColor={textColor} >Hi, I'm an Aspiring<br /><ProfileIntroSpan ref={this.el} /></ProfileIntro>            
+                  <ProfileImage src={profileImageUrl} alt='profile'/>
+                  <div>  
+                    <ProfileIntro textColor={textColor} >Hi, I'm an Aspiring<br /><ProfileIntroSpan ref={this.el} /></ProfileIntro>
+                    <ProfileIcons>
+                      {socialMediaIconsList.map((socialMedia, index) => (
+                        <ProfileSocialMediaButton onClick={() => this.navigateToSocialAcc(socialMedia.iconLink)} iconColor={socialMedia.color} key={index}>{socialMedia.iconName}</ProfileSocialMediaButton>
+                      ))}
+                    </ProfileIcons>
+                  </div>            
                 </ProfileSectionSubOne>
                 <ProfileSectionSubTwo>
                   <ProfileDescription textColor={textColor}>
@@ -143,10 +185,10 @@ class Profile extends Component {
               </div>
               <ResumePortfolioSection>
                 <ResumePortfolioLink textColor={textColor} linkItemColor={linkItemColor} onClick={this.openPdf} >
-                  Resume
+                  RESUME
                 </ResumePortfolioLink>
                 <ResumePortfolioLink textColor={textColor} linkItemColor={linkItemColor}>
-                  Share Profile
+                  <ShareProfile />
                 </ResumePortfolioLink>
               </ResumePortfolioSection>
               <Skills />

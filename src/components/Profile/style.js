@@ -93,6 +93,7 @@ export const ResumePortfolioSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
 `;
 
 export const ResumePortfolioLink = styled.button`
@@ -105,7 +106,7 @@ export const ResumePortfolioLink = styled.button`
   background-color: ${props => props.linkItemColor};
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   margin-right: 22px;
   height: 44px;
   border: 0px;
@@ -136,3 +137,27 @@ export const NextArrow = styled.div`
   cursor: pointer;
   z-index: 1;
 `;
+
+export const ProfileIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`
+
+export const ProfileSocialMediaButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  height: 28px;
+  width: 28px;
+  background-color: transparent;
+  color: ${props => props.iconColor};
+  border: 0px;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    height: 44px;
+    width: 44px;
+  }
+  
+`

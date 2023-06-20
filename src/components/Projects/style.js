@@ -27,7 +27,11 @@ export const ProjectsHeading = styled.h4`
   font-weight: bolder;
   margin: 0px;
   color: ${props => props.textColor};
-
+  @media screen and (min-width: 767px) {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
 `;
 
 export const ErrorView = styled.div`

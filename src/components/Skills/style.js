@@ -18,8 +18,8 @@ export const SkillsSection = styled.div`
   overflow-x: scroll;
   scrollbar-width: thin;
   background-color: ${props => props.bgColor};
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 22px;
+  margin-bottom: 22px;
   @media screen and (min-width: 767px) {
     justify-content: space-between;
     overflow-x: auto;
@@ -47,7 +47,7 @@ export const SkillIconLink = styled.button`
   align-items: center;
   height: 66px;
   width: 66px;
-  border: 1.5px dotted;
+  border: 3px dashed;
   border-color: ${props => props.borderColor};
   border-radius: 50px;
   animation: spin 2s linear forwards;

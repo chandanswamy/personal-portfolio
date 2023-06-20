@@ -11,13 +11,13 @@ const fadeInAnimation = keyframes`
 export const ProjectCardContainer = styled.li`
   list-style: none;
   width: 90%;
-  max-width: 350px;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   margin: 12px 8px 12px 8px;
-  padding: 16px 24px 16px 24px;
+  padding: 12px 18px 12px 18px;
   background-color: ${props => props.bgColor};
   color: ${props => props.textColor};
   box-shadow: 6px 12px 36px 12px rgba(31, 38, 135, 0.37);

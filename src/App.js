@@ -16,8 +16,23 @@ class App extends Component{
 
   state = {isDarkTheme: true}
 
+  componentDidMount() {
+    // Load the isDarkTheme value from local storage when the component mounts
+    const isDarkTheme = localStorage.getItem('isDarkTheme');
+    if (isDarkTheme) {
+      this.setState({ isDarkTheme: JSON.parse(isDarkTheme) });
+    }
+  }
+
   changeTheme = () => {
-    this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme }))
+    this.setState(prevState => {
+      const newTheme = !prevState.isDarkTheme;
+      
+      // Save the newTheme value to local storage
+      localStorage.setItem('isDarkTheme', JSON.stringify(newTheme));
+
+      return { isDarkTheme: newTheme };
+    });
   }
 
   render(){
