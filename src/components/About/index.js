@@ -12,7 +12,7 @@ const educationData = [
   {
     id: 1,
     institution: "NXT wave Disruptive Technologies",
-    city: "Guntur",
+    city: "Hyderbad",
     course: "Industry Ready Certification in Full-stack Development",
     field: "MERN STACK",
     score: null,
