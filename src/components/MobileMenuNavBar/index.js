@@ -7,13 +7,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import Home from '@mui/icons-material/Home'
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Avatar from '@mui/material/Avatar';
+
+import Cookies from 'js-cookie';
 
 import { Link } from 'react-router-dom';
 import {Menu, MenuIcon} from './style';
@@ -46,6 +48,10 @@ export default function SwipeableTemporaryDrawer() {
     
         setState({ ...state, [anchor]: open });
       };
+
+      const loggingOut = () => {
+        Cookies.remove("jwt_token")
+      }
 
   return(
   <PortFolioContext.Consumer>
@@ -111,11 +117,11 @@ export default function SwipeableTemporaryDrawer() {
                   </ListItemButton>
                 </ListItem>
                 <ListItem key="Login" disablePadding>
-                  <ListItemButton sx={{'&:focus': {backgroundColor: isDarkTheme ? '#000000' : '#ffffff'}}} component={Link} to={"/login"} >
+                  <ListItemButton sx={{'&:focus': {backgroundColor: isDarkTheme ? '#000000' : '#ffffff'}}} onClick={loggingOut} component={Link} to={"/login"} >
                       <ListItemIcon>
-                        <LoginIcon sx={{color: isDarkTheme ? '#fff' : '#000'}} />
+                        <LogoutIcon sx={{color: isDarkTheme ? '#fff' : '#000'}} />
                       </ListItemIcon>
-                    <ListItemText primary={'Login'} />
+                    <ListItemText primary={'Logout'} />
                   </ListItemButton>
                 </ListItem>
             </List>

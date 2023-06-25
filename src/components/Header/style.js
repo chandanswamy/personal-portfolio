@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import {CgLock} from 'react-icons/cg';
+import {CgCodeSlash} from 'react-icons/cg';
 
 
 export const NavBar = styled.nav`    
@@ -12,7 +12,7 @@ export const NavBar = styled.nav`
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid #CCCCCC;
-        background-color: ${(props) => (props.darkTheme ? '#262626' : '#FAF9F6')};
+        background-color: ${(props) => (props.darktheme ? '#262626' : '#FAF9F6')};
         position: sticky;
         top: 0;
         width: 100%;
@@ -39,15 +39,15 @@ export const Heading = styled.h1`
         font-size: 16px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         font-weight: bolder;
-        color: ${(props) => props.darkTheme ? '#fff' : "#000"};
+        color: ${(props) => props.darktheme ? '#fff' : "#000"};
         @media screen and (min-width: 768px) {
                 font-size: 18px;
         }
 `
 
-export const LockIcon = styled(CgLock)`
+export const LockIcon = styled(CgCodeSlash)`
         font-size: 22px;
-        color: ${(props) => props.darkTheme ? '#fff' : "#000"};
+        color: ${(props) => props.darktheme ? '#fff' : "#000"};
         @media screen and (min-width: 768px) {
                 order: 1;
         }
@@ -63,7 +63,7 @@ export const NavBarLogo = styled.img`
                 height: 45px;
                 width: 45px;
                 border-radius: 50px;
-                background-color: ${(props) => props.darkTheme ? '#fff' : "#000"};
+                background-color: ${(props) => props.darktheme ? '#fff' : "#000"};
                 display: block;
                 margin-left: 6px;
                 margin-right: 6px;
@@ -95,10 +95,10 @@ export const NavItem = styled.button`
   font-size: 16px;
   font-weight: 500;
   font-family: 'Rubik', sans-serif;
-  color: ${(props) => (props.darkTheme ? '#fff' : '#000')};
+  color: ${(props) => (props.darktheme ? '#fff' : '#000')};
   border-width: 1px;
   border-style: solid;
-  border-color: ${(props) => (props.darkTheme ? '#fff' : '#000')};
+  border-color: ${(props) => (props.darktheme ? '#fff' : '#000')};
   border-radius: 2px;
   padding: 4px 8px;
   display: flex;
@@ -112,7 +112,7 @@ export const NavItem = styled.button`
   &::before,
   &::after {
     position: absolute;
-    background: ${(props) => (props.darkTheme ? '#262626' : '#FAF9F6')};
+    background: ${(props) => (props.darktheme ? '#262626' : '#FAF9F6')};
     z-index: -1;
     transition: 1s;
     content: '';
@@ -139,15 +139,15 @@ export const NavItem = styled.button`
 
   &:hover::before {
     width: 0px;
-    background: ${(props) => (props.darkTheme ? '#262626' : '#FAF9F6')};
+    background: ${(props) => (props.darktheme ? '#262626' : '#FAF9F6')};
   }
 
   &:hover::after {
     height: 0px;
-    background: ${(props) => (props.darkTheme ? '#262626' : '#FAF9F6')};
+    background: ${(props) => (props.darktheme ? '#262626' : '#FAF9F6')};
   }
 
   &:hover {
-    background: ${(props) => (props.darkTheme ? '#262626' : '#FAF9F6')};
+    background: ${(props) => (props.darktheme ? '#262626' : '#FAF9F6')};
   }
 `;

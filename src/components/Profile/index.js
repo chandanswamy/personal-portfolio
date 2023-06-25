@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import PortfolioContext from '../../context/PortfolioContext'
 import Skills from '../Skills'
 import Projects from '../Projects';
+import Header from '../Header'
+import Footer from '../Footer'
+
 
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi'
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -161,6 +164,8 @@ class Profile extends Component {
           const linkItemColor = isDarkTheme ? '#262626' : '#efefef'
 
           return (
+            <>
+            <Header />
             <ProfileContainer bgColor={bgColor}>
               <div className='profile-section'>
                 <ProfileSectionSubOne>
@@ -194,6 +199,8 @@ class Profile extends Component {
               <Skills />
               <Projects />
             </ProfileContainer>
+            <Footer />
+            </>
           )
         }}
       </PortfolioContext.Consumer>

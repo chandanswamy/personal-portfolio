@@ -6,7 +6,7 @@ import Login from './components/Login'
 import About from './components/About'
 import NotFound from './components/NotFound'
 import Contact from './components/Contact'
-import Header from './components/Header'
+import ProtectedRoute from './components/ProtectedRoute'
 import { Navigate } from 'react-router-dom'
 import PortFolioContext from './context/PortfolioContext'
 
@@ -14,7 +14,7 @@ import './App.css'
 
 class App extends Component{
 
-  state = {isDarkTheme: true}
+  state = {isDarkTheme: false}
 
   componentDidMount() {
     // Load the isDarkTheme value from local storage when the component mounts
@@ -42,16 +42,17 @@ class App extends Component{
     return(
       
       <PortFolioContext.Provider value={{isDarkTheme, changeTheme: this.changeTheme}}>
-        <div className='portfolio'>
-          <Header />
+        <div className='portfolio'>          
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/profile" element={<Profile />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/contact" element={<Contact />} />
-            <Route exact path="/not-found" element={<NotFound />} />
-            <Route path="*" element={<Navigate to="/not-found" />} />
+            <Route path="/login" element={<Login />} />
+            <Route element={<ProtectedRoute />}>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/not-found" />} />            
           </Routes>
         </div>
       </PortFolioContext.Provider>

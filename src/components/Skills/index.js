@@ -75,7 +75,7 @@ const Skills = () => (
 
             return (
                 <>
-                    <SkillsHeading textColor={textColor}>Skills</SkillsHeading>
+                    <SkillsHeading textColor={textColor}>My Skills</SkillsHeading>
                     <SkillsSection bgColor={bgColor}>
                     {skillsList.map((skill, index) => (
                         <EachSkillCard key={index}>

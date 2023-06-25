@@ -33,7 +33,7 @@ from {
 
 export const ContactRoute = styled.div`
   padding: 24px 16px 24px 16px;
-  background-color: ${(props) => props.darkTheme ? '#000' : '#fff'} ;
+  background-color: ${(props) => props.darkmode ? '#000' : '#fff'} ;
   min-height: calc(100vh - 45px);
   @media screen and (min-width: 768px) {
   padding: 32px 24px 32px 24px;
@@ -49,7 +49,7 @@ export const ContactRoute = styled.div`
 export const ContactSection = styled.div`  
   display: flex;
   flex-direction: column;
-  color: ${(props) => props.darkTheme ? '#fff' : '#000'} ;
+  color: ${(props) => props.darkmode ? '#fff' : '#000'} ;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-evenly;
@@ -71,7 +71,7 @@ export const ContactSectionForm = styled.div`
 export const ContactMe = styled.h3`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 18px;
-  color: ${(props) => props.darkTheme ? '#fff' : '#000'} ;
+  color: ${(props) => props.darkmode ? '#fff' : '#000'} ;
   animation: ${slideDownAnimation} 3s forwards;
   margin-bottom: 12px;
   margin-top: 12px;
@@ -100,9 +100,9 @@ export const FormControl = styled.input`
   max-width: 350px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
   border-radius: 4px;
-  background-color: ${(props) => props.darkTheme ? '#28282B' : '#fff'} ;
-  color: ${(props) => props.darkTheme ? '#fff' : '#000'} ;
-  border-color: ${(props) => props.darkTheme ? '#fff' : '#000'} ;
+  background-color: ${(props) => props.darkmode ? '#28282B' : '#fff'} ;
+  color: ${(props) => props.darkmode ? '#fff' : '#000'} ;
+  border-color: ${(props) => props.darkmode ? '#fff' : '#000'} ;
   border: 1px solid;
   padding-left: 16px;
   font-size: 16px;
@@ -117,9 +117,9 @@ export const Textarea = styled.textarea`
   max-width: 350px;
   border-radius: 4px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
-  background-color: ${(props) => props.darkTheme ? '#28282B' : '#fff'} ;
-  color: ${(props) => props.darkTheme ? '#fff' : '#000'} ;
-  border-color: ${(props) => props.darkTheme ? '#fff' : '#000'} ;
+  background-color: ${(props) => props.darkmode ? '#28282B' : '#fff'} ;
+  color: ${(props) => props.darkmode ? '#fff' : '#000'} ;
+  border-color: ${(props) => props.darkmode ? '#fff' : '#000'} ;
   border: 1px solid;
   padding-left: 16px;
   padding-top: 4px;

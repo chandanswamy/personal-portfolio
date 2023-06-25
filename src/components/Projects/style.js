@@ -16,7 +16,7 @@ export const LoaderContainer = styled.div`
 export const ProjectList = styled.ul`
   padding: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;

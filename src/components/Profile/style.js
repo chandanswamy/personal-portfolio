@@ -158,6 +158,17 @@ export const ProfileSocialMediaButton = styled.button`
   @media screen and (min-width: 768px) {
     height: 44px;
     width: 44px;
-  }
-  
+    &:hover{
+      animation: slideup 0.5s ease-in-out;
+    }
+
+    @keyframes slideup {
+      from{
+        transform: translate3d(0px, 0px, 0px);
+      }
+      to{
+        transform: translate3d(0px, -10px, 10px);
+      }
+    }
+    }  
 `

@@ -44,8 +44,7 @@
     opacity: 0;
   }
 
-  .check span {
-    
+  .check span {    
     position: relative;
   }
   
@@ -53,7 +52,7 @@
     display: block;
     width: 10px;
     height: 2px;
-    background-color: #fff;
+    background-color: green;
     transform: rotate(45deg);
   }
   
@@ -61,7 +60,7 @@
     display: block;
     width: 20px;
     height: 2px;
-    background-color: #fff;
+    background-color: green;
     transform: rotate(-45deg) translate3d(14px, -4px, 0);
     transform-origin: 100%;
   }

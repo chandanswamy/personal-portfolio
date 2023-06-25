@@ -1,6 +1,6 @@
 import React from 'react';
-import { FiNavigation } from 'react-icons/fi';
-import { BsFileEarmarkCode } from 'react-icons/bs';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import CodeIcon from '@mui/icons-material/Code';
 import PortfolioContext from '../../context/PortfolioContext'
 
 
@@ -12,11 +12,11 @@ const ProjectCard = (props) => {
   const isFrontend = projectDomain === 'Frontend';
 
   const onClickDemoButton = () => {
-    window.open(projectDemo)
+    window.open(projectDemo, '_blank')
   };
 
   const onClickCodeButton = () => {
-    window.open(projectCode)
+    window.open(projectCode, "_blank")
   };
   return(
   <PortfolioContext.Consumer>
@@ -37,12 +37,12 @@ const ProjectCard = (props) => {
           <ProjectsButtonContainer>
             {isFrontend && (
               <ProjectButton type='button' className='code' onClick={onClickDemoButton} isFrontend={isFrontend}>
-                <ProjectIcon as={FiNavigation} />
+                <ProjectIcon as={OpenInNewIcon} />
                 <ProjectButtonTag>Live Demo</ProjectButtonTag>
               </ProjectButton>
             )}
             <ProjectButton type='button' className='code' onClick={onClickCodeButton} isFrontend={isFrontend}>
-              <ProjectIcon as={BsFileEarmarkCode} />
+              <ProjectIcon as={CodeIcon} />
               <ProjectButtonTag>Code</ProjectButtonTag>
             </ProjectButton>
           </ProjectsButtonContainer>

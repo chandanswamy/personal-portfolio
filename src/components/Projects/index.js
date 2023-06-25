@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import ProjectCard from '../ProjectCard';
+import Cookies from 'js-cookie';
 
 import PortfolioContext from '../../context/PortfolioContext'
 
@@ -30,8 +31,12 @@ class Projects extends Component {
 
     try {
       const apiUrl = 'https://gcs-deploy-node.onrender.com/projects';
+      const jwtToken = Cookies.get('jwt_token')
       const options = {
         method: 'GET',
+        headers:{
+          Authorization: `Bearer ${jwtToken}`
+        }
       };
       const response = await fetch(apiUrl, options);
       if (response.ok) {
@@ -91,7 +96,7 @@ class Projects extends Component {
         const textColor = isDarkTheme ? '#fff' : '#000'
         return (
           <>
-            <ProjectsHeading textColor={textColor}>Projects</ProjectsHeading>
+            <ProjectsHeading textColor={textColor}>My Projects</ProjectsHeading>
             <ProjectList>
               {projectsList.map((eachProject) => (
                 <ProjectCard key={eachProject.projectId} projectDetails={eachProject} />

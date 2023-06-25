@@ -12,12 +12,12 @@ const Header = () => {
     {value => {
       const {isDarkTheme} = value;
       return (
-        <NavBar darkTheme={isDarkTheme}>
+        <NavBar darktheme={isDarkTheme}>
             <NavBarDivOne>
-                <LockIcon darkTheme={isDarkTheme} />
-                <NavBarLogo darkTheme={isDarkTheme} src="https://res.cloudinary.com/chandanswamy/image/upload/v1687093264/cslogo_xbwerl.png" alt="portfolio logo" />
+                <LockIcon darktheme={isDarkTheme} />
+                <NavBarLogo darktheme={isDarkTheme} src="https://res.cloudinary.com/chandanswamy/image/upload/v1687093264/cslogo_xbwerl.png" alt="portfolio logo" />
                 <NavBarLink to="/">
-                  <Heading darkTheme={isDarkTheme} >_CHANDANSWAMY_</Heading>
+                  <Heading darktheme={isDarkTheme} >_CHANDANSWAMY_</Heading>
                 </NavBarLink>
             </NavBarDivOne>
             <NavBarMobileDiv>
@@ -25,13 +25,13 @@ const Header = () => {
             </NavBarMobileDiv>
             <NavBarDesktopDiv>
               <NavBarLink to="/profile">
-                  <NavItem darkTheme={isDarkTheme} >Profile</NavItem>
+                  <NavItem darktheme={isDarkTheme} >Profile</NavItem>
               </NavBarLink>
               <NavBarLink to="/about">
-                  <NavItem darkTheme={isDarkTheme} >About</NavItem>
+                  <NavItem darktheme={isDarkTheme} >About</NavItem>
               </NavBarLink>
               <NavBarLink to="/contact">
-                  <NavItem darkTheme={isDarkTheme} >Contact</NavItem>
+                  <NavItem darktheme={isDarkTheme} >Contact</NavItem>
               </NavBarLink>
               <DesktopMenuNavBar />
             </NavBarDesktopDiv>

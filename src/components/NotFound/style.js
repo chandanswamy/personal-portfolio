@@ -56,6 +56,7 @@ export const HomeButton = styled.button`
     width: 150px;
     margin: 12px;
     background-color: #9656a1;
+    cursor: pointer;
     color: ${props => props.noteColor};
     font-size: 16px;
     font-weight: 500;

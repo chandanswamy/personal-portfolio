@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from '../Header'
+import Footer from '../Footer'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -34,6 +36,7 @@ const NotFound = () => {
 
       return (
         <>
+          <Header />
           <NotFoundContainer bgColor={bgColor}>
             <NotFoundVideosView>
               <NotFoundVideosImage src={notFoundImageUrl} alt="not found" />
@@ -46,6 +49,7 @@ const NotFound = () => {
               <HomeButton onClick={goBackToHome}>Go Back To Home</HomeButton>
             </NotFoundVideosView>
           </NotFoundContainer>
+          <Footer />
         </>
       )
     }}
