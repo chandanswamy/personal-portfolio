@@ -86,8 +86,8 @@ export const Description = styled.ul`
 `;
 
 export const DescriptionItem = styled.li`
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 500;
   margin:  4px 0px 4px 0px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 `;

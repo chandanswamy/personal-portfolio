@@ -9,7 +9,7 @@ import { Loader, LoginRoute, LoginPageImageContainer, DesktopLoginImage, MobileL
 import './index.css'
 
 class LoginPage extends Component{
-  state = {username: '', password: '', usernameError: false, passwordError: false, loginCredentialsError: false, errorMsg: '', isSubmit: false}
+  state = {username: 'guestuser', password: 'guest@#@112', usernameError: false, passwordError: false, loginCredentialsError: false, errorMsg: '', isSubmit: false}
 
   onEnterUsername = (event) => {
     this.setState({username: event.target.value})
@@ -111,7 +111,7 @@ class LoginPage extends Component{
                     {loginCredentialsError ? (<ErrorMessage>{errorMsg}</ErrorMessage>) : null }
                     <Loader>{isSubmit ? this.renderLoader() : null}</Loader>
                   </FormGroup>
-                  <SignupLink href="#">Don't have an account? Sign up</SignupLink>
+                  <SignupLink to="/sign-up">Don't have an account? Sign up</SignupLink>
                 </form>
               </LoginContainer>
             </LoginRoute>

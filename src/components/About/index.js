@@ -11,6 +11,25 @@ import Footer from '../Footer'
 const educationData = [
   {
     id: 1,
+    institution: "NXT wave Disruptive Technologies",
+    city: "Guntur",
+    course: "Industry Ready Certification in Full-stack Development",
+    field: "MERN STACK",
+    score: null,
+    scoreType: null,
+    joiningYear: "April 2022",
+    graduationYear: "Present",
+    imageUrl : 'https://res.cloudinary.com/chandanswamy/image/upload/v1687728207/nxtwave_ph2kyq.png',
+    description: [
+      "Highlights of Achievements:",
+      "- Fundamentals of Programming: Gained a keen understanding of Python concepts, enabling clean and efficient code writing.",
+      "- Website Development: Skilled in building impressive static and dynamic websites using JavaScript to enhance user experience.",
+      "- Static and Dynamic Websites: Proficient in designing elegant and responsive layouts using HTML and CSS for static websites.",
+      "- Responsive Web Design: Capable of creating websites that seamlessly adapt to different devices, ensuring optimal user experience."
+    ]
+  },
+  {
+    id: 2,
     institution: "R.V.R. & J.C. College of Engineering",
     city: "Guntur",
     course: "Bachelor of Technology",
@@ -26,7 +45,7 @@ const educationData = [
       "Throughout my academic journey, I actively participated in various projects, honing my problem-solving skills and fostering a passion for innovation. I also engaged in extracurricular activities, including leadership roles in student organizations, which enhanced my teamwork and communication abilities."],
   },
   {
-    id: 2,
+    id: 3,
     institution: "Narayana Junior College",
     city: "Vijayawada",
     course: "Intermediate",
@@ -41,7 +60,7 @@ const educationData = [
       " With a remarkable score of 94%, I showcased strong analytical and problem-solving abilities. This academic journey cultivated my curiosity, critical thinking, and perseverance."],
   },
   {
-    id: 3,
+    id: 4,
     institution: "Nalanda Vidya Niketan",
     city: "Vijayawada",
     course: "CBSE",

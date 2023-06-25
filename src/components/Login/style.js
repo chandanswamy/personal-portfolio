@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 export const LoginRoute = styled.div`
     min-height: 100vh;
@@ -100,7 +101,7 @@ export const SubmitButton = styled.button`
   }
 `;
 
-export const SignupLink = styled.a`
+export const SignupLink = styled(Link)`
   display: block;
   text-align: center;
   margin-top: 10px;

@@ -7,6 +7,7 @@ const EducationCard = (props) => {
     const {eduDetails} = props 
     const {id, institution,city,course,field, score,scoreType,joiningYear,graduationYear,description, imageUrl} = eduDetails
     const ispercentSymbol = scoreType === "PERCENT"
+    const activeScoreTab = score !== null
 
     const orderOfContainer = id%2 === 0 ? 1 : 0
     
@@ -25,11 +26,13 @@ const EducationCard = (props) => {
                             <Course>{course}</Course>
                             <Dates>{`${joiningYear} - ${graduationYear}`}</Dates>
                         </CourseDetails>
-                        <CourseDetails>
-                            <Field>{field}</Field>
-                            {ispercentSymbol && <Score>{`${score} %`}</Score>}
-                            {!ispercentSymbol && <Score>{`${score} CGPA`}</Score>}
-                        </CourseDetails>
+                        {activeScoreTab ? (
+                            <CourseDetails>
+                                <Field>{field}</Field>
+                                {ispercentSymbol && <Score>{`${score} %`}</Score>}
+                                {!ispercentSymbol && <Score>{`${score} CGPA`}</Score>}
+                            </CourseDetails>
+                        ) : null}
                         <Description>
                             {description.map((eachItem, index) => (
                             <DescriptionItem key={index}>{eachItem}</DescriptionItem>
