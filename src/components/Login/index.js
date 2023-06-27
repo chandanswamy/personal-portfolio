@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import Cookies from 'js-cookie';
 import { withRouter } from '../../utils/withRouter';
+import {ProgressBar} from 'react-loader-spinner'
 
 import PortfolioContext from '../../context/PortfolioContext'
 
 import { Loader, LoginRoute, LoginPageImageContainer, DesktopLoginImage, MobileLoginImage,  LoginContainer, Title, FormGroup, Label, Input, SubmitButton, SignupLink, ErrorMessage } from './style.js'
-
-import './index.css'
 
 class LoginPage extends Component{
   state = {username: 'guestuser', password: 'guest@#@112', usernameError: false, passwordError: false, loginCredentialsError: false, errorMsg: '', isSubmit: false}
@@ -33,12 +32,16 @@ class LoginPage extends Component{
   }
 
   renderLoader = () => {
-    const {isSubmit} = this.state
-    const isActive = isSubmit ? 'active' : null
     return(
-      <div className={`loader ${isActive}`}>
-        
-      </div>
+      <ProgressBar
+        height="80"
+        width="80"
+        ariaLabel="progress-bar-loading"
+        wrapperStyle={{}}
+        wrapperClass="progress-bar-wrapper"
+        borderColor = '#F4442E'
+        barColor = '#51E5FF'
+      />
     )
   }
 

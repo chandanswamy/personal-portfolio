@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
+import { Dna } from 'react-loader-spinner';
 import ProjectCard from '../ProjectCard';
 import Cookies from 'js-cookie';
 
@@ -66,7 +66,14 @@ class Projects extends Component {
 
   renderLoadingView = () => (
     <LoaderContainer>
-      <RotatingLines strokeColor="grey" strokeWidth="5" animationDuration="0.75" width="56" visible={true} />
+      <Dna
+        visible={true}
+        height="100"
+        width="100"
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper"
+      />
     </LoaderContainer>
   );
 
