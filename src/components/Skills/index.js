@@ -50,7 +50,7 @@ const skillsList = [
       skillName: 'Node.js',
     },
     {
-      linkItem: './PEVHLMTRXV.pdf',
+      linkItem: './LVFRHKJBAC.pdf',
       iconItem: <FaReact className='skill-icon' style={{color: '#41cff2'}} />,
       skillName: 'React.js',
     },
