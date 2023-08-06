@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../Header'
 import Footer from '../Footer'
 
 import { useNavigate } from 'react-router-dom'
@@ -15,10 +14,15 @@ import {
   NotFoundVideosNote,
   HomeButton
 } from './style'
+import { useEffect } from 'react'
 
 const NotFound = () => {
 
-  const navigate = useNavigate();   
+  const navigate = useNavigate();
+
+  useEffect(()=> {
+    document.title='Page Not Found'
+  })
 
   return(
   <PortfolioContext.Consumer>
@@ -35,8 +39,7 @@ const NotFound = () => {
       const notFoundImageUrl = 'https://res.cloudinary.com/chandanswamy/image/upload/v1687196029/404_error_lost_in_space-bro__1_-removebg-preview_fgdeyr.png'
 
       return (
-        <>
-          <Header />
+        <>          
           <NotFoundContainer bgColor={bgColor}>
             <NotFoundVideosView>
               <NotFoundVideosImage src={notFoundImageUrl} alt="not found" />

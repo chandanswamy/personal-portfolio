@@ -1,73 +1,97 @@
-import styled, { keyframes } from 'styled-components';
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+import styled from 'styled-components';
+
+export const Card = styled.div`
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1500ms;
 `;
+
 
 export const ProjectCardContainer = styled.li`
   list-style: none;
-  width: 90%;
-  max-width: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 12px 8px 12px 8px;
-  padding: 12px 18px 12px 18px;
-  background-color: ${props => props.bgColor};
-  color: ${props => props.textColor};
-  box-shadow: 6px 12px 36px 12px rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  animation: ${fadeInAnimation} 1.5s forwards;
-  opacity: 0;
-  @media screen and (min-width: 768px) {
-    height: 350px;
-  }
+  min-width: 260px;
+  max-width: 300px;
+  height: 300px;
+  perspective: 1000px;
+
+  &:hover > ${Card}{
+    cursor: pointer;
+    transform: rotateY(180deg) rotateZ(180deg);
+  } 
 `;
 
+export const CardFront = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 12px 18px 12px 18px;
+    border-radius: 1rem;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: ${props => props.bgColor};
+  color: ${props => props.textColor};
+  box-shadow: 12px 12px 32px 12px rgba(31, 38, 135, 0.41);
+`;
+
+export const CardBack = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 12px 18px 12px 18px;
+    border-radius: 1rem;    
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg) rotateZ(180deg);
+    background-color: ${props => props.bgColor};
+    color: ${props => props.textColor};
+    box-shadow: 6px 12px 36px 12px rgba(31, 38, 135, 0.37);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+`;
+
+
 export const ProjectTitleContainer = styled.div`
-  margin-bottom: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;
 
 export const ProjectTitle = styled.h4`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 22px;
-  margin: 0;
+
 `;
 
 export const ProjectDescription = styled.p`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  margin: 12px 0 0 0;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 export const ProjectDetailsContainer = styled.div`
-  margin: 0 0 8px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 `;
 
 export const ProjectConcepts = styled.p`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  margin: 12px 0;
+  text-align: left;
 `;
 
 export const ProjectSkills = styled.p`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  margin: 12px 0;
+  text-align: left;
 `;
 
 export const ProjectsButtonContainer = styled.div`

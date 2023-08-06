@@ -47,7 +47,7 @@ const Footer = () => {
             <FooterIcons>
               {socialMediaIconsList.map((socialMedia, index) => (
                 <FooterSocialMediaButton onClick={() => navigateToSocialAcc(socialMedia.iconLink)} iconColor={socialMedia.color} key={index}>{socialMedia.iconName}</FooterSocialMediaButton>
-              ))}
+              ))} 
             </FooterIcons>
         </FooterBar>
       )

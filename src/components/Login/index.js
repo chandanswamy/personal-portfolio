@@ -10,6 +10,10 @@ import { Loader, LoginRoute, LoginPageImageContainer, DesktopLoginImage, MobileL
 class LoginPage extends Component{
   state = {username: 'guestuser', password: 'guest@#@112', usernameError: false, passwordError: false, loginCredentialsError: false, errorMsg: '', isSubmit: false}
 
+  componentDidMount(){
+    document.title=`Login`
+  }
+
   onEnterUsername = (event) => {
     this.setState({username: event.target.value})
   }

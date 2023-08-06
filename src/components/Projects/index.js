@@ -25,6 +25,7 @@ class Projects extends Component {
   }
 
   getProjects = async () => {
+
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     });
@@ -52,7 +53,7 @@ class Projects extends Component {
           concept: project.concept,
         }));
         this.setState({
-          projectsList: updatedData,
+          projectsList: updatedData.sort(() => Math.random() - 0.5),
           apiStatus: apiStatusConstants.success,
         });
       } else {

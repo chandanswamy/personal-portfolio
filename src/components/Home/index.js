@@ -7,6 +7,11 @@ import Footer from '../Footer'
 import { HomeRoute, HomeContent } from './style'
 
 export class Home extends Component {
+
+  componentDidMount(){
+    document.title=`Chandan Swamy`
+  }
+
   render() {
     
     return(

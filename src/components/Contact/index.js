@@ -16,6 +16,10 @@ class Contact extends Component{
     this.form = React.createRef();
   }
 
+  componentDidMount(){
+    document.title=`Contact Me`
+  }
+
   state = {name: '', email: '', message: '', isSubmit: false, ErrorMessage:false, nameError: false, emailError: false, messageError: false}
 
   handleNameChange(event) {

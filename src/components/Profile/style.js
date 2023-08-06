@@ -155,20 +155,12 @@ export const ProfileSocialMediaButton = styled.button`
   color: ${props => props.iconColor};
   border: 0px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
   @media screen and (min-width: 768px) {
     height: 44px;
     width: 44px;
     &:hover{
-      animation: slideup 0.5s ease-in-out;
+      transform: scale(1.5);
     }
-
-    @keyframes slideup {
-      from{
-        transform: translate3d(0px, 0px, 0px);
-      }
-      to{
-        transform: translate3d(0px, -10px, 10px);
-      }
-    }
-    }  
-`
+  }  
+`;

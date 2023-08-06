@@ -4,7 +4,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import PortfolioContext from '../../context/PortfolioContext'
 
 
-import { ProjectCardContainer, ProjectButton, ProjectButtonTag, ProjectConcepts, ProjectDescription, ProjectDetailsContainer, ProjectIcon, ProjectSkills, ProjectTitle, ProjectTitleContainer, ProjectsButtonContainer } from './style';
+import { Card, CardFront, CardBack, ProjectCardContainer, ProjectButton, ProjectButtonTag, ProjectConcepts, ProjectDescription, ProjectDetailsContainer, ProjectIcon, ProjectSkills, ProjectTitle, ProjectTitleContainer, ProjectsButtonContainer } from './style';
 
 const ProjectCard = (props) => {
   const { projectDetails } = props;
@@ -26,27 +26,33 @@ const ProjectCard = (props) => {
       const textColor = isDarkTheme ? '#fff' : '#000'
       return (
         <ProjectCardContainer bgColor={bgColor} textColor={textColor}>
-          <ProjectTitleContainer>
-            <ProjectTitle>{projectTitle}</ProjectTitle>
-            <ProjectDescription>{projectDescription}</ProjectDescription>
-          </ProjectTitleContainer>
-          <ProjectDetailsContainer>
-            <ProjectConcepts>{`Concepts : ${concept}`}</ProjectConcepts>
-            <ProjectSkills>{`Skills : ${skills}`}</ProjectSkills>
-          </ProjectDetailsContainer>
-          <ProjectsButtonContainer>
-            {isFrontend && (
-              <ProjectButton type='button' className='code' onClick={onClickDemoButton} isFrontend={isFrontend}>
-                <ProjectIcon as={OpenInNewIcon} />
-                <ProjectButtonTag>Live Demo</ProjectButtonTag>
-              </ProjectButton>
-            )}
-            <ProjectButton type='button' className='code' onClick={onClickCodeButton} isFrontend={isFrontend}>
-              <ProjectIcon as={CodeIcon} />
-              <ProjectButtonTag>Code</ProjectButtonTag>
-            </ProjectButton>
-          </ProjectsButtonContainer>
-        </ProjectCardContainer>        
+          <Card>
+            <CardFront textColor={textColor}>
+              <ProjectTitleContainer>
+                <ProjectTitle>{projectTitle}</ProjectTitle>
+                <ProjectDescription>{projectDescription}</ProjectDescription>
+              </ProjectTitleContainer>
+            </CardFront>
+            <CardBack textColor={textColor}>
+              <ProjectDetailsContainer>
+                <ProjectConcepts>{`Concepts : ${concept}`}</ProjectConcepts>
+                <ProjectSkills>{`Skills : ${skills}`}</ProjectSkills>
+              </ProjectDetailsContainer>
+              <ProjectsButtonContainer>
+                {isFrontend && (
+                  <ProjectButton type='button' className='code' onClick={onClickDemoButton} isFrontend={isFrontend}>
+                  <ProjectIcon as={OpenInNewIcon} />
+                  <ProjectButtonTag>Live Demo</ProjectButtonTag>
+                  </ProjectButton>
+                )}
+                <ProjectButton type='button' className='code' onClick={onClickCodeButton} isFrontend={isFrontend}>
+                  <ProjectIcon as={CodeIcon} />
+                  <ProjectButtonTag>Code</ProjectButtonTag>
+                </ProjectButton>
+              </ProjectsButtonContainer>
+            </CardBack>
+          </Card>
+        </ProjectCardContainer>    
       )
     }}
   </PortfolioContext.Consumer>

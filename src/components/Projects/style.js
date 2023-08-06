@@ -20,12 +20,15 @@ export const ProjectList = styled.ul`
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 40px 30px;
+
+  
 `;
 
 export const ProjectsHeading = styled.h4`
   font: 18px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   font-weight: bolder;
-  margin: 0px;
+  margin: 0px 0px 32px 0px;
   color: ${props => props.textColor};
   @media screen and (min-width: 767px) {
     text-align: center;

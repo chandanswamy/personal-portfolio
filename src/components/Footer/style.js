@@ -46,8 +46,13 @@ export const FooterSocialMediaButton = styled.button`
   color: ${props => props.iconColor};
   border: 0px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
   @media screen and (min-width: 768px) {
     height: 26px;
     width: 26px;
+  }
+
+  &:hover{
+    transform: scale(1.2);
   }
 `

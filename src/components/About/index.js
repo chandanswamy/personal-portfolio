@@ -100,6 +100,10 @@ const jobDetailsList = [
 
 class About extends Component {
   state = {educationalData: educationData, jobDetails: jobDetailsList}
+
+  componentDidMount(){
+    document.title=`About`
+  }
   
   render(){
   return (

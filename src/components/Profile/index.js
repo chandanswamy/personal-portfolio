@@ -76,6 +76,8 @@ class Profile extends Component {
       strings: ['FRONTEND DEVELOPER', 'BACKEND DEVELOPER', 'FULLSTACK DEVELOPER'],
       typeSpeed: 100,
     });
+
+    document.title=`Profile`
   }
 
   componentWillUnmount() {
@@ -86,7 +88,7 @@ class Profile extends Component {
 
   openPdf = () => {
     // Provide the path or URL of the PDF file to open
-    const pdfUrl = './ChandanSwamyGanuga.pdf';
+    const pdfUrl = './Resume.pdf';
 
     // Open the PDF file in a new tab or window
     window.open(pdfUrl, '_blank');
